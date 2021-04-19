@@ -5,5 +5,6 @@
 .\objects\cjson.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\cjson.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
 .\objects\cjson.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
+.\objects\cjson.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
 .\objects\cjson.o: cJSON\cJSON.h
 .\objects\cjson.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h

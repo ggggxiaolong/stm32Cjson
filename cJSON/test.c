@@ -19,7 +19,11 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-#include "test.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "cJSON.h"
 
 /* Used by some code below as an example datatype. */
 struct record
@@ -55,7 +59,7 @@ static int print_preallocated(cJSON *root)
     if (buf == NULL)
     {
         printf("Failed to allocate memory.\n");
-        return(1);
+        exit(1);
     }
 
     /* create buffer to fail */
@@ -64,7 +68,7 @@ static int print_preallocated(cJSON *root)
     if (buf_fail == NULL)
     {
         printf("Failed to allocate memory.\n");
-        return(1);
+        exit(1);
     }
 
     /* Print to buffer */
@@ -173,7 +177,7 @@ static void create_objects(void)
     /* Print to text */
     if (print_preallocated(root) != 0) {
         cJSON_Delete(root);
-        return;
+        exit(EXIT_FAILURE);
     }
     cJSON_Delete(root);
 
@@ -182,7 +186,7 @@ static void create_objects(void)
 
     if (print_preallocated(root) != 0) {
         cJSON_Delete(root);
-        return;
+        exit(EXIT_FAILURE);
     }
     cJSON_Delete(root);
 
@@ -197,7 +201,7 @@ static void create_objects(void)
 
     if (print_preallocated(root) != 0) {
         cJSON_Delete(root);
-        return;
+        exit(EXIT_FAILURE);
     }
     cJSON_Delete(root);
 
@@ -215,7 +219,7 @@ static void create_objects(void)
 
     if (print_preallocated(root) != 0) {
         cJSON_Delete(root);
-        return;
+        exit(EXIT_FAILURE);
     }
     cJSON_Delete(root);
 
@@ -238,7 +242,7 @@ static void create_objects(void)
 
     if (print_preallocated(root) != 0) {
         cJSON_Delete(root);
-        return;
+        exit(EXIT_FAILURE);
     }
     cJSON_Delete(root);
 
@@ -247,12 +251,12 @@ static void create_objects(void)
 
     if (print_preallocated(root) != 0) {
         cJSON_Delete(root);
-        return;
+        exit(EXIT_FAILURE);
     }
     cJSON_Delete(root);
 }
 
-int CJSON_CDECL cJSON_test(void)
+int CJSON_CDECL main(void)
 {
     /* print the version */
     printf("Version: %s\n", cJSON_Version());
